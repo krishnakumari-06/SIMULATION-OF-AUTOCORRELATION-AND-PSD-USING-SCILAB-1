@@ -47,6 +47,37 @@ Verify the generated waveform using Tabulation and Model Waveform
 
 __PROGRAM:__
 
+```
+clc;
+clear all;
+
+T = 0:0.01:2*%pi;
+x = sin(2*T);
+
+subplot(3,2,1);
+plot(x);
+
+au = xcorr(x, x);
+subplot(3,2,2);
+plot(au);
+
+v = fft(au);
+subplot(3,2,3);
+plot(abs(v));
+
+fw = fft(x);
+subplot(3,2,4);
+plot(fw);
+
+fw2 = (abs(fw)).^2;
+subplot(3,2,5);
+plot(fw2);
+```
+
 __OUTPUT:__
 
+<img width="1859" height="883" alt="Screenshot 2025-10-16 161237" src="https://github.com/user-attachments/assets/f1979a0a-3649-4e6c-b139-ee13cb9d4375" />
+
+
 __RESULT:__
+Thus, a program for Autocorrelation and PSD of signals in SCILAB and verified Wiener-Khinchin relation. 
