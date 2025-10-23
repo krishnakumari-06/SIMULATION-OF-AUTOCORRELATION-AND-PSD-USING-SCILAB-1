@@ -2,7 +2,7 @@
 
 __AIM:__
 
-Write a program for Autocorrelation and PSD of signals in SCILAB and verify Wiener-Khinchin relation. 
+Write a program for Autocorrelation and PSD of signals in SCILAB and verify Wiener-Khinchin relation
 
 
 __EQUIPMENTS Needed:__
