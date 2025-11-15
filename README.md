@@ -1,4 +1,6 @@
-# SIMULATION-OF-AUTOCORRELATION-AND-PSD-USING-SCILAB-1
+__NAME:__ KRISHNA KUMARI
+
+__REG NO:__212224060127
 
 __AIM:__
 
@@ -46,38 +48,46 @@ If any Error, correct it in code and execute again
 Verify the generated waveform using Tabulation and Model Waveform 
 
 __PROGRAM:__
-
-```
-clc;
+```clc;
 clear all;
+close;
 
-T = 0:0.01:2*%pi;
-x = sin(2*T);
+t = 0:0.01:%pi*2;
+x = sin(2*t);
+
 
 subplot(3,2,1);
-plot(x);
+plot(t, x);
+title('Original Signal');
 
 au = xcorr(x, x);
 subplot(3,2,2);
 plot(au);
+title('Autocorrelation');
+
 
 v = fft(au);
 subplot(3,2,3);
 plot(abs(v));
+title('FFT of Autocorrelation');
+
 
 fw = fft(x);
 subplot(3,2,4);
-plot(fw);
+plot(abs(fw));
+title('FFT of Original Signal');
+
 
 fw2 = (abs(fw)).^2;
 subplot(3,2,5);
 plot(fw2);
+title('Power Spectrum');
 ```
 
 __OUTPUT:__
-
-<img width="1859" height="883" alt="Screenshot 2025-10-16 161237" src="https://github.com/user-attachments/assets/f1979a0a-3649-4e6c-b139-ee13cb9d4375" />
+<img width="958" height="539" alt="image" src="https://github.com/user-attachments/assets/80a01bf1-2c24-4cf0-826d-f5a87382318f" />
 
 
 __RESULT:__
-Thus, a program for Autocorrelation and PSD of signals in SCILAB and verified Wiener-Khinchin relation. 
+The autocorrelation function of the signal was successfully computed and plotted.
+The Power Spectral Density (PSD) obtained from the FFT of the autocorrelation verified the Wiener-Khinchin relation.
